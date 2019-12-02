@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS实例-点击图片</title>
+        <style>
+          .trans_fade_image{
+            position: absolute;/*如果没有这个的话，两张image是分开放置的。如果有这个的话，第二张图将去到第一张图的位置上*/
+            transition: opacity 1s ease-in-out;
+          }
+          .trans_fade_image_click{
+            opacity: 0;
+          }
+        </style>
+    </head>
+    <body>
+      <div id="testBox" class="demo">
+        <img class="trans_fade_image" src="./1.jpg" style="width:500px;height:500px"/>
+        <img src="./2.png" style="width:500px;height:500px" />
+      </div>
+    <script>
+      (function(){
+        var oImage = document.getElementById('testBox').getElementsByTagName('img');
+        oImage[0].onclick = function(){
+          var cl = this.className;
+          if(/click/.test(cl)){
+            this.className = 'trans_fade_image';
+          }else{
+            this.className = 'trans_fade_image trans_fade_image_click';
+          }
+        }
+      })();
+    </script>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS实例-鼠标悬停</title>
+        <style>
+          .anim_fade_image{
+            position: absolute;/*如果没有这个的话，两张image是分开放置的。如果有这个的话，第二张图将去到第一张图的位置上*/
+            transition: opacity 1s ease-in-out;
+          }
+          .anim_fade_image:hover{
+            opacity: 0;
+          }
+        </style>
+    </head>
+    <body>
+      <img class="anim_fade_image" src="./1.jpg" style="width:500px;height:500px"/>
+      <img src="./2.png" style="width:500px;height:500px" />
+      </div>
+    </body>
+</html>

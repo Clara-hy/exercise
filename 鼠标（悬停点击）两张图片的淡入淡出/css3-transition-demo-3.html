@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS实例</title>
+        <style>
+            .anim_box{
+                width: 500px;
+                height: 500px;
+            }
+            .anim_image{
+                transition: all 1s ease-in-out;
+                cursor: pointer;
+            }
+            .anim_image_top{
+                position: absolute;
+                transform: scale(0, 0);/*第一张图是不显示的，显示的是第二张图*/
+                opacity: 0;
+            }
+            /* 鼠标悬停时，第一张图出现，第二张图消失 */
+            .anim_box:hover .anim_image_top{
+                opacity: 1;
+                transform: scale(1,1);
+                transform-origin: top right;/*鼠标移出后，图片往右上角消失*/
+            }
+            .anim_box:hover .anim_image_bottom{
+                transform: scale(0,0);
+                transform-origin: bottom left;/*鼠标移出后，图片往左下角出现*/
+            }
+        </style>
+    </head>
+    <body>
+        <div id="testBox" class="anim_box">
+            <img class="anim_image anim_image_top" src="./1.jpg" style="width:500px;height:500px"/>
+            <img class="anim_image anim_image_bottom" src="./2.png" style="width:500px;height:500px" />
+        </div>
+    </body>
+</html>

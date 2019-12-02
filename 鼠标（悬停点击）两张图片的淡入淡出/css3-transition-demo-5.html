@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS实例</title>
+        <style>
+			.trans_box{
+				width: 400px;
+				margin: 20px;
+				overflow: hidden;
+			}
+			.trans_image_box{
+				width: 1200px;/* 3*400px = 1200px */
+				transition: all 1s ease-in-out;/* all可用margin代替 */
+				height: 400px;
+			}
+			.trans_image{
+				width: 400px;
+				float: left;/* 目的：将图片放在同一行 */
+			}
+			.trans_image_trigger{
+				text-align: center;
+				padding-top: 0;
+			}
+			.trans_image_trigger a{
+				margin-right: 5px;
+				text-decoration: none;
+			}
+        </style>
+    </head>
+    <body>
+		<div class="trans_box">
+			<div id="transImageBox" class="trans_image_box">
+				<img class="trans_image" src="./1.jpg" />
+				<img class="trans_image" src="./2.png" />
+				<img class="trans_image" src="./3.jpg" />
+			</div>
+			<div id="transImageTrigger" class="trans_image_trigger">
+				<a href="#1">图片1-猪</a> <a href="#2">图片2-我可以</a> <a href="#3">图片3-公仔</a> 
+			</div>
+		</div>
+		<script>
+			(function(){
+				var $ = function(id){
+					return document.getElementById(id);
+				}
+				var oBox = $("transImageBox"),
+					oTrigger = $("transImageTrigger").getElementsByTagName("a"),
+					lTrigger = oTrigger.length;
+				
+				if(oBox && lTrigger){
+					for(let i = 0; i < lTrigger; i++){
+						oTrigger[i].onclick = function(){
+							// alert(this.href);
+							let index = Number(this.href.replace(/.*#/g, "")) || 1;/* href中#前面（包括#）全部用空代替，最后得到一个图片数字 */
+							oBox.style.marginLeft = (1 - index)*400 + 'px';/* 利用margin-left进行移动 */
+							return false;
+						}
+					}
+				}
+
+			})();
+		
+		</script>
+    </body>
+</html>
