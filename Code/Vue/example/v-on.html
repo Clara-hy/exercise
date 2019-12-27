@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-on</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>    
+<body>
+    <h1>v-on实例</h1>
+    <hr>
+    <div id="app">
+        本次比赛得分：{{score}}
+        <p>
+            <button v-on:click="add">加分</button>
+            <button @click="subtract">减分</button><br/>
+            <p>下面的输入框，敲入数字回车即可显示"本次比赛得分"与输入框数字相加的结果</p>
+            <input type="text" v-on:keydown.enter="onEnter" v-model="score2">
+        </p>
+    </div>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el:'#app',
+            data:{
+                score: 0,
+                score2: 1
+            },
+            methods:{
+                add: function(){
+                    this.score++;
+                },
+                subtract: function(){
+                    this.score--;
+                },
+                onEnter: function(){
+                    this.score = this.score + parseInt(this.score2);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
