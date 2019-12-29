@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue.set</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>    
+<body>
+    <h1>vue.set 全局操作</h1>
+    <hr>
+    <div id="app">
+       {{count}} 
+       <ul>
+           <li v-for="item in arr">{{item}}</li>
+       </ul>
+    </div>
+    <p><button onclick="add()">ADD</button></p>
+
+    <script type="text/javascript">
+        function add(){
+            // 【改变声明在vue构造器外部的变量count】方法一：Vue.set
+            // Vue.set(outData,'count',2);
+
+            // 方法二：利用实例app
+            // app.count++;
+
+            // 方法三：利用原生
+            // outData.count++;
+
+            //【改变数组】方法一：利用实例app。发现不起作用。js的问题
+            // app.arr[1]='dd';
+
+            // 方法二：Vue.set
+            Vue.set(app.arr,1,'dd');
+        }
+
+        var outData = {
+            count:1,
+            arr:['aaa','bbb','ccc']
+        }
+        var app = new Vue({
+            el:'#app',
+            data:outData //外部数据赋值给构造器
+        });
+    </script>
+</body>
+</html>

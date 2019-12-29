@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>component-3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+
+<body>
+    <h1>component-3</h1>
+    <hr>
+    <div id="app">
+        <clara></clara>
+    </div>
+
+    <script type="text/javascript">
+        // 子组件（要写在前面。因为是从上往下加载的）
+        var city = {
+            template: `<div style="color:blue;">I'm from Guangdong</div>`
+        }
+        // 父组件
+        var claraComponent = {
+            template: `
+            <div>
+              <p>Clara is me.</p>
+              <city></city>
+            </div>
+            `,
+            components:{
+                "city":city
+            }
+        }
+        
+
+        var app = new Vue({
+            el: '#app',
+            components: {
+                "clara": claraComponent
+            }
+        });
+    </script>
+</body>
+
+</html>

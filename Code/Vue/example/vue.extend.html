@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue.extend</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>    
+<body>
+    <h1>vue.extend 拓展实例构造器</h1>
+    <hr>
+    第一个是绑在div的id上，第二个是绑在author标签
+    <div id="author"></div>
+    <author></author>
+    
+
+    <script type="text/javascript">
+        var authorExtend = Vue.extend({
+            //标签上的属性需要用绑定。比如a的href属性。不绑定会报错
+            template:"<p><a :href = 'authorURL'>{{authorName}}</a></p>",
+            //这里的data和vue构造器里的有点区别。这里的data是一个函数，返回的是对象
+            data: function(){
+                return {
+                    authorName:'Clara',
+                    authorURL:'https://blog.csdn.net/weixin_40836227'
+                }
+            }
+        });
+        new authorExtend().$mount('#author');
+        new authorExtend().$mount('author');
+
+    </script>
+</body>
+</html>

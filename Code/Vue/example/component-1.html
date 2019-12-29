@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>component-1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>    
+<body>
+    <h1>component-1</h1>
+    <hr>
+    <div id="app">
+        <clara></clara>
+        <orange></orange>
+    </div>
+
+    <script type="text/javascript">
+        // 全局组件，好像只能定义一个
+        Vue.component('clara',{
+            template:`<div style="color:red">我是全局的clara组件</div>`
+        })
+        var app = new Vue({
+            el:'#app',
+            components:{//局部组件，可定义多个
+                "orange":{
+                    template:`<div style="color:blue">我是局部的orange组件</div>`
+                }
+            }
+        });
+    </script>
+</body>
+</html>

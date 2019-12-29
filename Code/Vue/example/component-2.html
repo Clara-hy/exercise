@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>component-2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>    
+<body>
+    <h1>component-2</h1>
+    <hr>
+    <div id="app">
+        <p>&lt;orange money="dollar"&gt;&lt;/orange&gt;</p>
+        <orange money="dollar"></orange>
+        
+        <p>&lt;orange v-bind:money="message""&gt;&lt;/orange&gt;</p>
+        <p>&lt;orange :money="message""&gt;&lt;/orange&gt;</p>
+        <orange v-bind:money="message"></orange>
+    </div>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el:'#app',
+            data:{
+                message:"kkkk"
+            },
+            components:{
+                "orange":{
+                    template:`<div style="color:blue">orange costs {{ money }}</div>`,
+                    props:['money']
+                }
+            }
+        });
+    </script>
+</body>
+</html>
