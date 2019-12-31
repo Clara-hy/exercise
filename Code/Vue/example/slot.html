@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>slot 内置组件</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+
+<body>
+    <h1>slot 内置组件</h1>
+    <hr>
+    <div id="app">
+        <p>将弄一个clara组件，目的：为传递博客的一些信息</p>
+        <clara>
+            <span slot="blogUrl">{{claraData.blogURL}}</span>
+            <span slot="netName">hhhhhy</span>
+            <span slot="skill">{{claraData.skill}}</span>
+        </clara>
+    </div>
+
+    <template id="tep">
+        <div>
+            <p>博客地址：<slot name="blogUrl"></slot></p>
+            <p>网名：<slot name="netName"></slot></p>
+            <p>技术类型：<slot name="skill"></slot></p>
+        </div>
+    </template>
+
+    <script type="text/javascript">
+        var clara = {
+            template: "#tep"
+        }
+        var app = new Vue({
+            el: '#app',
+            data: {
+                claraData: {
+                    blogURL: 'https://blog.csdn.net/weixin_40836227',
+                    netName: 'clara-hy',
+                    skill: 'HTML'
+                }
+            },
+            components: {
+                "clara": clara
+            }
+        });
+    </script>
+</body>
+
+</html>

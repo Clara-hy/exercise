@@ -11,6 +11,8 @@
     <hr>
     <div id="app"></div>
     <p><button onclick="destroy()">卸载</button></p>
+    <p><button onclick="reload()">刷新</button></p>
+    <p><button onclick="tick()">更改数据</button></p>
 
     <script type="text/javascript">
         var clara = Vue.extend({
@@ -23,14 +25,26 @@
             mounted:function(){
                 console.log('扩展里加的 mounted 被创建');
             },
+            updated:function(){
+                console.log('updated 更新之后');
+            },
             destroyed:function(){
-                console.log('destroy 销毁之后');
+                console.log('destroyed 销毁之后');
             }
         });
 
         var vm = new clara().$mount('#app');
         function destroy(){
             vm.$destroy();
+        }
+        function reload(){
+            vm.$forceUpdate();
+        }
+        function tick(){
+            vm.message = "update message info";
+            vm.$nextTick(function(){//这是一个回调函数
+                console.log('message被更改之后我被调用了');
+            });
         }
     </script>
 </body>
