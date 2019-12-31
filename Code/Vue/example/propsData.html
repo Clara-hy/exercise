@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>propsData Option</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>    
+<body>
+    <h1>propsData Option</h1>
+    <hr>
+    <div id="app">
+        <cat></cat>
+    </div>
+
+    <script type="text/javascript">
+        var cat_a = Vue.extend({
+            template:`<p>{{ message }}-{{a}}</p>`,
+            data:function (){
+                return {
+                    message:"Hello, I am a cat!"
+                }
+            },
+            props:['a']
+        });
+        
+        new cat_a({propsData:{a:'kakaka'}}).$mount("cat");
+    </script>
+</body>
+</html>

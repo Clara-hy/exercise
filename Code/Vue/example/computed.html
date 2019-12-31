@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>computed Option</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>    
+<body>
+    <h1>computed Option</h1>
+    <hr>
+    <div id="app">
+        <p>{{newPrice}}</p>
+        <p>{{ price }}</p>
+        <ol>
+            <li v-for="item in newList">{{ item.title }}-{{ item.data }}</ol>
+        </ol>
+    </div>
+
+    <script type="text/javascript">
+        var newList = [
+            {title:"铁路春运售票第18日售出1312万张，候补兑现率81%", data:"2019/12/30"},
+            {title:"年内15涨板上钉钉？国内油价或上调，加满一箱多花9元", data:"2019/12/30"},
+            {title:"农业农村部：上周五全国猪肉批发均价较高峰降18.15%", data:"2019/12/30"},
+            {title:"商务部：2019年消费预计将首次突破40万亿元", data:"2019/12/30"},
+            {title:"冻哭！今冬首个棉裤预警发布，全国约五成地区需棉裤护体", data:"2019/12/30"},
+        ];
+        var app = new Vue({
+            el:'#app',
+            data:{
+                price:100,
+                newList:newList
+            },
+            computed:{
+                newPrice:function (){
+                    return '￥' + this.price + '元';//这样不会污染原数据
+                    // 如果是return this.price = '￥' + this.price + '元';那就会替换掉原数据
+                },
+                reverseNews:function(){
+                    return this.newList.reverse();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>example02 methods</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>    
+<body>
+    <h1>example02 methods demo</h1>
+    <hr>
+    <div id="app"></div>
+    <p><button onclick="destroy()">卸载</button></p>
+
+    <script type="text/javascript">
+        var clara = Vue.extend({
+            template:`<p>{{ message }}</p>`,
+            data:function(){
+                return {
+                    message:'hello, I am clara'
+                }
+            },
+            mounted:function(){
+                console.log('扩展里加的 mounted 被创建');
+            },
+            destroyed:function(){
+                console.log('destroy 销毁之后');
+            }
+        });
+
+        var vm = new clara().$mount('#app');
+        function destroy(){
+            vm.$destroy();
+        }
+    </script>
+</body>
+</html>
