@@ -1,7 +1,6 @@
-# clitest
+# vuex
 
 > A Vue.js project
-> 用来熟悉vue-cli
 
 ## Build Setup
 

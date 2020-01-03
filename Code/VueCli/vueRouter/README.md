@@ -1,6 +1,7 @@
 # routertest
 
 > A Vue.js project
+> 用来练习vue-router
 
 ## Build Setup
 
