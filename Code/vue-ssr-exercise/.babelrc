@@ -1,0 +1,9 @@
+// 演示如何使用vue的render方法以及vue可以支持css的代码
+{
+    "presets":[
+        "@babel/preset-env" //webpack4.x的配置
+    ],
+    "plugins": [
+        "transform-vue-jsx"
+    ]
+}
