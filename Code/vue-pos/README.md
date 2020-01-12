@@ -1,21 +1,3 @@
-# vue-pos
-
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+项目预览：https://clara-hy.github.io/exercise/Code/vue-pos/dist/index.html#/  
+跟的课程：https://www.bilibili.com/video/av48860539  
+暂未实现的东西：1.用axios向后台传数据 2.没有用到vue-router、vuex 3.不太懂开发环境里的index.html与main.js有什么关系
