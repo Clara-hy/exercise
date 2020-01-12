@@ -43,7 +43,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: './', //原来的是'/'（绝对路径）,要换成'./'（相对路径）,这样打包才能运行
 
     /**
      * Source Maps
