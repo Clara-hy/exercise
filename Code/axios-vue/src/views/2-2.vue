@@ -24,7 +24,7 @@ export default {
         method:'get',
         url:'/data.json',
         params:{
-            id:'12'
+            id:12
         }
     }).then((res)=>{
         console.log(res);
@@ -58,6 +58,31 @@ export default {
     })
     // patch
     axios.post('/patch',data).then((res)=>{
+        console.log(res);
+    })
+    // delete
+    // 在url上传递参数
+    axios.delete('/delete',{
+        params:{
+            id:12
+        }
+    }).then((res)=>{
+        console.log(res);
+    })
+    // 不在url上传递参数
+    axios.delete('/delete',{
+        data:{
+            id:12
+        }
+    }).then((res)=>{
+        console.log(res);
+    })
+    axios({
+        method:'delete',
+        url:'/delete',
+        params:{},
+        data:{}
+    }).then((res)=>{
         console.log(res);
     })
   }
