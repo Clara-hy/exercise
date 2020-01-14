@@ -17,6 +17,12 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  // 添加2-2路径
+  {
+    path:'/2-2',
+    name:'axios请求方法',
+    component: () => import('../views/2-2.vue')
   }
 ]
 
