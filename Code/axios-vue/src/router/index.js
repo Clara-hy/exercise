@@ -23,6 +23,12 @@ const routes = [
     path:'/2-2',
     name:'axios请求方法',
     component: () => import('../views/2-2.vue')
+  },
+  // 添加2-3路径
+  {
+    path:'/2-3',
+    name:'axios并发请求',
+    component: () => import('../views/2-3.vue')
   }
 ]
 
