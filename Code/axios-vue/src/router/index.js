@@ -29,6 +29,12 @@ const routes = [
     path:'/2-3',
     name:'axios并发请求',
     component: () => import('../views/2-3.vue')
+  },
+  // 添加联系人路径
+  {
+    path:'/contactList',
+    name:'联系人列表',
+    component:() => import('../views/contactList.vue')
   }
 ]
 
