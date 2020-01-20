@@ -1,22 +1,47 @@
 <template>
   <div class="home">
-      <van-button type="default">默认按钮</van-button>
+    <!-- 联系人列表 -->
+    <van-contact-list
+      :list="list"
+      @add="onAdd"
+      @edit="onEdit"
+    />
   </div>
 </template>
 
 <script>
-import axios from 'axios'
-import { Button } from 'vant';
+import axios from "axios";
+import { ContactList } from "vant";
 export default {
-  name: 'contactList',
-  components:{
+  name: "contactList",
+  components: {
     //  组件库的按需引用
-      [Button.name]:Button
+    [ContactList.name]:ContactList
   },
-  created(){
-    axios.get('/data.json').then((res)=>{
+  data(){
+    return{
+      // {
+      //  id:1,
+      //  name:'',
+      //  tel:''
+      // }
+      list:[]
+    }
+  },
+  created() {
+    axios.get("/data.json").then(res => {
       console.log(res);
-    })
+    });
+  },
+  methods:{
+    // 添加联系人
+    onAdd(){
+
+    },
+    // 编辑联系人
+    onEdit(){
+
+    }
   }
-}
+};
 </script>
