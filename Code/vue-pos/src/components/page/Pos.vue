@@ -1,7 +1,7 @@
 <template>
   <div class="pos">
     <el-row>
-      <el-col :span="7" class="pos-order" id="order-list">
+      <el-col :span="8" class="pos-order" id="order-list">
         <el-tabs>
           <el-tab-pane label="点餐">
             <el-table :data="tableData" border style="width:100%">
@@ -28,7 +28,7 @@
           <el-tab-pane label="外卖">外卖</el-tab-pane>
         </el-tabs>
       </el-col>
-      <el-col :span="15">
+      <el-col :span="16">
         <!-- 14+8=22 剩下的2是被leftNav占了，占了5%，即1.2，应该算成2了-->
         <div class="often-goods">
           <div class="title">常用商品</div>
@@ -123,7 +123,8 @@ export default {
   created: function() {
     axios
       .get(
-        "https://www.easy-mock.com/mock/5e1abb7d7f109b0caa4d2e32/vue-pos/oftenGoods"
+        // "https://www.easy-mock.com/mock/5e1abb7d7f109b0caa4d2e32/vue-pos/oftenGoods"
+        "https://www.fastmock.site/mock/0bf6a5bae7eab8507e44b56191ddff36/vuepos/oftenGoods"
       )
       .then(response => {
         // console.log(response);
@@ -136,7 +137,8 @@ export default {
 
     axios
       .get(
-        "https://www.easy-mock.com/mock/5e1abb7d7f109b0caa4d2e32/vue-pos/typeGoods"
+        // "https://www.easy-mock.com/mock/5e1abb7d7f109b0caa4d2e32/vue-pos/typeGoods"
+        "https://www.fastmock.site/mock/0bf6a5bae7eab8507e44b56191ddff36/vuepos/typeGoods"
       )
       .then(response => {
         console.log(response);
@@ -244,6 +246,9 @@ export default {
 </script>
 
 <style scoped>
+.pos{
+  margin-left: 5%;
+}
 .pos-order {
   background-color: #f9fafc;
   border-right: 1px solid #c0ccda;
