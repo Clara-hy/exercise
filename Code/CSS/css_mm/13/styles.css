@@ -150,12 +150,12 @@ footer{
 	clear:both;
 }
 /* .pageWrapper的效果是，整个页面最大宽度为1200px。连同背景也是 */
-.pageWrapper{
-	max-width: 1200px;
-	margin: 0 auto;
-}
-/* 下面的效果是，内容宽度是1200px且居中，但是背景宽度是100%的。如果不懂，可以相互比较 //这个属性算流式布局。而width:960px算固定布局*/
-/* nav ul, header h1, footer p, .contentWrapper{
+/* .pageWrapper{
 	max-width: 1200px;
 	margin: 0 auto;
 } */
+/* 下面的效果是，内容宽度是1200px且居中，但是背景宽度是100%的。如果不懂，可以相互比较 //这个属性算流式布局。而width:960px算固定布局*/
+nav ul, header h1, footer p, .contentWrapper{
+	max-width: 1200px;
+	margin: 0 auto;
+}
